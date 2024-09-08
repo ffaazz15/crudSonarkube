@@ -68,7 +68,7 @@ def update_user(id):
                 (data['name'], data['age'], data['location'], id))
     updated_user = cur.fetchone()
     conn.commit()
-    cur.clos()
+    cur.close()
     conn.close()
     if updated_user is None:
         return jsonify({"error": "User not found"}), 404
